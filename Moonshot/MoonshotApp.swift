@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct MoonshotApp: App {
+    @StateObject var jsonData = LoadJSONData()
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MissionsView()
+                .environmentObject(jsonData)
         }
     }
 }
